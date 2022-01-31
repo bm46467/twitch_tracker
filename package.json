@@ -1,8 +1,5 @@
 {
   "name": "twitch_tracker",
-  "jest": {
-    "verbose": true
-  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,6 +16,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:ci": "cross-env CI=true react-scripts test",
+    "test:ci:alt": "react-scripts test --ci --watchAll=false",
+    "test:jsdom": "yarn test --env=jsdom",
+    "test:staged": "yarn test:ci --findRelatedTests",
+    "test:coverage": "yarn test:ci --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
